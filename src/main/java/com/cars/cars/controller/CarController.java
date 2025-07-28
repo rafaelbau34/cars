@@ -24,4 +24,14 @@ public class CarController {
     public CarDto addCar(@RequestBody CarDto carDto) {
         return carService.addCar(carDto);
     }
+
+    @PutMapping("/{id}")
+    public CarDto updateCar(@PathVariable Long id, @RequestBody CarDto carDto) {
+        return carService.updateCar(id, carDto);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteCar(@PathVariable Long id) {
+        carService.deleteCar(id);
+    }
 }

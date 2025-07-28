@@ -1,6 +1,6 @@
 package com.cars.cars.repository;
 
-import com.cars.cars.model.User;
+import com.cars.cars.model.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User, Long> {}
+public interface UserRepository extends JpaRepository<Usuario, Long> {}

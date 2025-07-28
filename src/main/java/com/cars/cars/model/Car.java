@@ -21,7 +21,7 @@ public class Car {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private Usuario user;
 
     public Long getId() { return id;}
     public void setId(Long id) { this.id = id;}
@@ -47,6 +47,6 @@ public class Car {
     public LocalDate getPostedAt() {return postedAt;}
     public void setPostedAt(LocalDate postedAt) {this.postedAt = postedAt;}
 
-    public User getUser() {return user;}
-    public void setUser(User user) {this.user = user;}
+    public Usuario getUser() {return user;}
+    public void setUser(Usuario user) {this.user = user;}
 }
