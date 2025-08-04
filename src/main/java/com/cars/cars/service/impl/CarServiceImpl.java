@@ -6,6 +6,7 @@ import com.cars.cars.model.Usuario;
 import com.cars.cars.repository.CarRepository;
 import com.cars.cars.repository.UserRepository;
 import com.cars.cars.service.CarService;
+import com.cars.cars.dto.ImageDto;
 
 import org.springframework.stereotype.Service;
 
@@ -73,6 +74,17 @@ public class CarServiceImpl implements CarService {
         dto.setKilometers(car.getKilometers());
         dto.setDescription(car.getDescription());
         dto.setUserId(car.getUser().getId());
+
+        if (car.getImages() != null) {
+            List <ImageDto> imageDtos = car.getImages().stream().map(image -> {
+                ImageDto imgDto = new ImageDto();
+                imgDto.id = image.getId();
+                imgDto.url = image.getUrl();
+                imgDto.carId = car.getId();
+                return imgDto;
+            }).collect(Collectors.toList());
+            dto.setImages(imageDtos);
+        }
         return dto;
     }
 }

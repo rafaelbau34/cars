@@ -1,5 +1,7 @@
 package com.cars.cars.dto;
 
+import java.util.List;
+
 public class CarDto {
     private Long id;
     private String brand;
@@ -9,10 +11,11 @@ public class CarDto {
     private int kilometers;
     private String description;
     private Long userId;
+    private List<ImageDto> images; 
 
     public CarDto() {}
 
-    public CarDto(Long id, String brand, String model, int year, double price, int kilometers, String description, Long userId) {
+    public CarDto(Long id, String brand, String model, int year, double price, int kilometers, String description, Long userId, List<ImageDto> images) {
         this.id = id;
         this.brand = brand;
         this.model = model;
@@ -21,69 +24,33 @@ public class CarDto {
         this.kilometers = kilometers;
         this.description = description;
         this.userId = userId;
+        this.images = images;
     }
 
-    public Long getId() {
-        return id;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public void setId(Long id) {
-        this.id = id;
-    }
+    public String getBrand() { return brand; }
+    public void setBrand(String brand) { this.brand = brand; }
 
-    public String getBrand() {
-        return brand;
-    }
+    public String getModel() { return model; }
+    public void setModel(String model) { this.model = model; }
 
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
+    public int getYear() { return year; }
+    public void setYear(int year) { this.year = year; }
 
-    public String getModel() {
-        return model;
-    }
+    public double getPrice() { return price; }
+    public void setPrice(double price) { this.price = price; }
 
-    public void setModel(String model) {
-        this.model = model;
-    }
+    public int getKilometers() { return kilometers; }
+    public void setKilometers(int kilometers) { this.kilometers = kilometers; }
 
-    public int getYear() {
-        return year;
-    }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
 
-    public void setYear(int year) {
-        this.year = year;
-    }
+    public Long getUserId() { return userId; }
+    public void setUserId(Long userId) { this.userId = userId; }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
-    public int getKilometers() {
-        return kilometers;
-    }
-
-    public void setKilometers(int kilometers) {
-        this.kilometers = kilometers;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Long getUserId() {
-        return userId;
-    }
-
-    public void setUserId(Long userId) {
-        this.userId = userId;
-    }
+    public List<ImageDto> getImages() { return images; }
+    public void setImages(List<ImageDto> images) { this.images = images; }
 }

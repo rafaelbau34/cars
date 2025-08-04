@@ -2,6 +2,7 @@ package com.cars.cars.model;
 
 import jakarta.persistence.*;
 import java.time.LocalDate;
+import java.util.List;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
@@ -22,6 +23,9 @@ public class Car {
     @ManyToOne
     @JoinColumn(name = "user_id")
     private Usuario user;
+
+    @OneToMany(mappedBy = "car", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Image> images;
 
     public Long getId() { return id;}
     public void setId(Long id) { this.id = id;}
@@ -49,4 +53,7 @@ public class Car {
 
     public Usuario getUser() {return user;}
     public void setUser(Usuario user) {this.user = user;}
+
+    public List<Image> getImages() { return images; }
+    public void setImages(List<Image> images) { this.images = images; }
 }
